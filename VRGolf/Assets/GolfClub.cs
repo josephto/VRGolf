@@ -5,7 +5,7 @@ public class GolfClub : MonoBehaviour {
 
 	private Vector3 oldPosition;
 	private Vector3 velocity;
-	private bool contact = false;
+	public bool contact = false;
 
 	// Use this for initialization
 	void Start () {
