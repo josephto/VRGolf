@@ -6,32 +6,16 @@ public class GolfClub : MonoBehaviour {
 	private Vector3 oldPosition;
 	private Vector3 velocity;
 	public bool contact = false;
+	public AudioClip golfSwingSound;
+	public AudioClip golfHitSound;
+	public Transform flagPos;
+
+	private float nextSoundTime = 0f;
 
 	// Use this for initialization
 	void Start () {
 		oldPosition = transform.position;
 	}
-
-//	void OnTriggerEnter(Collider other){
-//		if(other.gameObject.name == "Sphere"){
-//			Debug.LogError ("Enter "+velocity);
-//			other.gameObject.rigidbody.velocity = velocity;
-//		}
-//	}
-
-//	void OnTriggerStay(Collider other){
-//		if(other.gameObject.name == "Sphere"){
-//			Debug.LogError ("Stay "+velocity);
-//			other.gameObject.rigidbody.velocity = velocity*2f;
-//		}
-//	}
-//
-//	void OnTriggerExit(Collider other){
-//		if(other.gameObject.name == "Sphere"){
-//			Debug.LogError ("Exit "+velocity);
-//			other.gameObject.rigidbody.velocity = velocity*2f;
-//		}
-//	}
 
 	// Update is called once per frame
 	void Update () {
@@ -44,7 +28,14 @@ public class GolfClub : MonoBehaviour {
 			Vector3 origin = newPosition;
 			Vector3 direction = (oldPosition-origin).normalized;
 			RaycastHit hit = new RaycastHit();
-			if(Physics.Raycast(origin, direction, out hit) && velocity.magnitude > 1000f ){ //threshold for swing arbitrary
+			if(Physics.Raycast(origin, direction, out hit) && 
+			   velocity.magnitude > (flagPos.position - transform.position).magnitude /4f ){ //threshold for swing arbitrary
+//				if (velocity.magnitude > 3000f){
+//					if(Time.time >= nextSoundTime){
+//						audio.PlayOneShot (golfSwingSound);
+//						nextSoundTime = Time.time + golfSwingSound.length;
+//					}
+//				}
 				if (hit.collider.name == "GolfBall"){
 					Debug.LogError ("velocity in FixedUpdate: "+velocity/15f);
 					hit.collider.gameObject.rigidbody.velocity = velocity/15f;
@@ -53,6 +44,7 @@ public class GolfClub : MonoBehaviour {
 					if (golfBall != null){
 						golfBall.cameraFollow = true;
 					}
+					audio.PlayOneShot (golfHitSound);
 				}
 			}
 		}

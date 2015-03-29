@@ -41,7 +41,7 @@ public class GolfBall : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if(gameObject.rigidbody.velocity.magnitude < 1f){
+		if(gameObject.rigidbody.velocity.magnitude < 2f){
 			gameObject.rigidbody.angularVelocity = gameObject.rigidbody.angularVelocity*0.8f;
 		}
 	}
@@ -81,5 +81,6 @@ public class GolfBall : MonoBehaviour {
 
 		}
 		Debug.LogError ("golfball velocity magn: "+this.gameObject.rigidbody.velocity.magnitude);
+		Debug.LogError ("distance from Flag: "+(flagPos.transform.position - transform.position).magnitude);
 	}
 }
