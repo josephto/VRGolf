@@ -30,7 +30,7 @@ public class GolfClub : MonoBehaviour {
 			RaycastHit hit = new RaycastHit();
 			if(Physics.Raycast(origin, direction, out hit) && 
 			   velocity.magnitude > (flagPos.position - transform.position).magnitude /4f ){ //threshold for swing arbitrary
-//				if (velocity.magnitude > 3000f){
+//				if  (velocity.magnitude > 3000f){
 //					if(Time.time >= nextSoundTime){
 //						audio.PlayOneShot (golfSwingSound);
 //						nextSoundTime = Time.time + golfSwingSound.length;

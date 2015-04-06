@@ -38,7 +38,7 @@ public class kinectSpecific : MonoBehaviour {
 
         longWord = GUI.TextField(new Rect(10, 10, 200, 30), readingAngle ? getAngle().ToString() : longWord, 20);
         
-        if (GUI.Button(new Rect(10, 40, 200, 30), "SetElevation"))
+        if (GUI.Button(new Rect(10, 40, 200, 30), "SetElevation")) 
         {
             
             angle = int.Parse(longWord);

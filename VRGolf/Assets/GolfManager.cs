@@ -10,5 +10,5 @@ public class GolfManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-	}
+	} 
 }

@@ -12,7 +12,7 @@ public class GolfBall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mainCamera = Camera.main;
+		mainCamera = Camera.main; 
 		golfBallCollider = this.gameObject.GetComponent<SphereCollider>();
 	}
 

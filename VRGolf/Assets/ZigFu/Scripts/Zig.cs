@@ -12,7 +12,7 @@ public class Zig : MonoBehaviour {
     public List<GameObject> listeners = new List<GameObject>();
     public bool Verbose = true;
     
-    
+     
 	void Awake () {
         #if UNITY_WEBPLAYER
         #if UNITY_EDITOR

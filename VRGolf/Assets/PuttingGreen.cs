@@ -15,7 +15,7 @@ public class PuttingGreen : MonoBehaviour {
 		if (other.gameObject.name == "GolfBall") {
 			originalDrag = other.gameObject.rigidbody.angularDrag;
 			other.gameObject.rigidbody.angularDrag = angularDrag;
-		}
+		} 
 	}
 
 	void OnTriggerExit(Collider other){
