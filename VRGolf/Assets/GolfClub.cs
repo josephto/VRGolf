@@ -28,6 +28,9 @@ public class GolfClub : MonoBehaviour {
 			Vector3 origin = newPosition;
 			Vector3 direction = (oldPosition-origin).normalized;
 			RaycastHit hit = new RaycastHit();
+
+			//sttill need to fix back swing
+
 			if(Physics.Raycast(origin, direction, out hit) && 
 			   velocity.magnitude > (flagPos.position - transform.position).magnitude /4f ){ //threshold for swing arbitrary
 //				if  (velocity.magnitude > 3000f){
@@ -36,6 +39,10 @@ public class GolfClub : MonoBehaviour {
 //						nextSoundTime = Time.time + golfSwingSound.length;
 //					}
 //				}
+
+				if  (velocity.magnitude > 5000f){
+					velocity = velocity * (5000f/velocity.magnitude);
+				}
 				if (hit.collider.name == "GolfBall"){
 					Debug.LogError ("velocity in FixedUpdate: "+velocity/15f);
 					hit.collider.gameObject.rigidbody.velocity = velocity/15f;

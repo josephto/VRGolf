@@ -41,8 +41,12 @@ public class GolfBall : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+//		if(gameObject.rigidbody.velocity.magnitude < 2f){
+//			gameObject.rigidbody.angularVelocity = gameObject.rigidbody.angularVelocity*0.8f;
+//		}
+
 		if(gameObject.rigidbody.velocity.magnitude < 2f){
-			gameObject.rigidbody.angularVelocity = gameObject.rigidbody.angularVelocity*0.8f;
+			gameObject.rigidbody.angularVelocity = gameObject.rigidbody.angularVelocity*0.75f;
 		}
 	}
 
