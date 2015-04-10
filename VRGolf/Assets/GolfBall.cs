@@ -91,7 +91,7 @@ public class GolfBall : MonoBehaviour {
 			QualitySettings.shadowDistance = 400f;
 
 		}
-		Debug.LogError ("golfball velocity magn: "+this.gameObject.rigidbody.velocity.magnitude);
-		Debug.LogError ("distance from Flag: "+(flagPos.transform.position - transform.position).magnitude);
+//		Debug.LogError ("golfball velocity magn: "+this.gameObject.rigidbody.velocity.magnitude);
+//		Debug.LogError ("distance from Flag: "+(flagPos.transform.position - transform.position).magnitude);
 	}
 }

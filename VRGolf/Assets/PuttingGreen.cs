@@ -5,7 +5,8 @@ public class PuttingGreen : MonoBehaviour {
 
 	public float angularDrag;
 	private float originalDrag;
-	public GameObject golfer;
+	public GameObject golfClub;
+	public GameObject golfPutter;
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +20,8 @@ public class PuttingGreen : MonoBehaviour {
 			GolfBall golfBall = other.gameObject.GetComponent<GolfBall>();
 			if (golfBall != null)
 				golfBall.inGreen = true;
-			golfer.transform.FindChild ("GolfClub").gameObject.SetActive (false);
-			golfer.transform.FindChild ("GolfPutter").gameObject.SetActive (true);
+			golfClub.SetActive (false);
+			golfPutter.SetActive (true);
 		} 
 	}
 
@@ -30,8 +31,8 @@ public class PuttingGreen : MonoBehaviour {
 			GolfBall golfBall = other.gameObject.GetComponent<GolfBall>();
 			if (golfBall != null)
 				golfBall.inGreen = false;
-			golfer.transform.FindChild ("GolfClub").gameObject.SetActive (true);
-			golfer.transform.FindChild ("GolfPutter").gameObject.SetActive (false);
+			golfClub.SetActive (true);
+			golfPutter.SetActive (false);
 		}
 	}
 

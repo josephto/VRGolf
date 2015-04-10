@@ -24,15 +24,15 @@ public class ZigSkeleton : MonoBehaviour
     public Transform RightHand;
     public Transform RightFingertip;
 
-    public Transform LeftHip;
-    public Transform LeftKnee;
-    public Transform LeftAnkle;
-    public Transform LeftFoot;
-
-    public Transform RightHip;
-    public Transform RightKnee;
-    public Transform RightAnkle;
-    public Transform RightFoot;
+//    public Transform LeftHip;
+//    public Transform LeftKnee;
+//    public Transform LeftAnkle;
+//    public Transform LeftFoot;
+//
+//    public Transform RightHip;
+//    public Transform RightKnee;
+//    public Transform RightAnkle;
+//    public Transform RightFoot;
     public bool mirror = false;
     public bool UpdateJointPositions = false;
     public bool UpdateRootPosition = false;
@@ -124,14 +124,14 @@ public class ZigSkeleton : MonoBehaviour
         transforms[(int)ZigJointId.RightWrist] = RightWrist;
         transforms[(int)ZigJointId.RightHand] = RightHand;
         transforms[(int)ZigJointId.RightFingertip] = RightFingertip;
-        transforms[(int)ZigJointId.LeftHip] = LeftHip;
-        transforms[(int)ZigJointId.LeftKnee] = LeftKnee;
-        transforms[(int)ZigJointId.LeftAnkle] = LeftAnkle;
-        transforms[(int)ZigJointId.LeftFoot] = LeftFoot;
-        transforms[(int)ZigJointId.RightHip] = RightHip;
-        transforms[(int)ZigJointId.RightKnee] = RightKnee;
-        transforms[(int)ZigJointId.RightAnkle] = RightAnkle;
-        transforms[(int)ZigJointId.RightFoot] = RightFoot;
+//        transforms[(int)ZigJointId.LeftHip] = LeftHip;
+//        transforms[(int)ZigJointId.LeftKnee] = LeftKnee;
+//        transforms[(int)ZigJointId.LeftAnkle] = LeftAnkle;
+//        transforms[(int)ZigJointId.LeftFoot] = LeftFoot;
+//        transforms[(int)ZigJointId.RightHip] = RightHip;
+//        transforms[(int)ZigJointId.RightKnee] = RightKnee;
+//        transforms[(int)ZigJointId.RightAnkle] = RightAnkle;
+//        transforms[(int)ZigJointId.RightFoot] = RightFoot;
 
 
 
