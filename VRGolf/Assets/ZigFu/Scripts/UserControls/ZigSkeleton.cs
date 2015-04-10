@@ -20,9 +20,9 @@ public class ZigSkeleton : MonoBehaviour
     public Transform RightCollar;
     public Transform RightShoulder;
     public Transform RightElbow;
-    public Transform RightWrist;
-    public Transform RightHand;
-    public Transform RightFingertip;
+//    public Transform RightWrist;
+//    public Transform RightHand;
+//    public Transform RightFingertip;
 
 //    public Transform LeftHip;
 //    public Transform LeftKnee;
@@ -121,9 +121,9 @@ public class ZigSkeleton : MonoBehaviour
         transforms[(int)ZigJointId.RightCollar] = RightCollar;
         transforms[(int)ZigJointId.RightShoulder] = RightShoulder;
         transforms[(int)ZigJointId.RightElbow] = RightElbow;
-        transforms[(int)ZigJointId.RightWrist] = RightWrist;
-        transforms[(int)ZigJointId.RightHand] = RightHand;
-        transforms[(int)ZigJointId.RightFingertip] = RightFingertip;
+//        transforms[(int)ZigJointId.RightWrist] = RightWrist;
+//        transforms[(int)ZigJointId.RightHand] = RightHand;
+//        transforms[(int)ZigJointId.RightFingertip] = RightFingertip;
 //        transforms[(int)ZigJointId.LeftHip] = LeftHip;
 //        transforms[(int)ZigJointId.LeftKnee] = LeftKnee;
 //        transforms[(int)ZigJointId.LeftAnkle] = LeftAnkle;

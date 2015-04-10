@@ -32,7 +32,7 @@ public class GolfBall : MonoBehaviour {
 			Vector3 upVector = new Vector3(0,1,0);
 			Vector3 crossProd = Vector3.Cross(ballToFlag, upVector).normalized;
 			if (inGreen){
-				golfer.transform.position = transform.position + crossProd*6.7f - ballToFlag*2.4f;
+				golfer.transform.position = transform.position + crossProd*7.7f - ballToFlag*1.4f;
 			}else{
 				golfer.transform.position = transform.position + crossProd*8.7f - ballToFlag*2.4f;
 			}
@@ -83,9 +83,11 @@ public class GolfBall : MonoBehaviour {
 			mainCamera.transform.LookAt (flagPos);
 		}else{
 
-			//make collider larger
-			golfBallCollider.radius = transform.localScale.x;
-			golfBallCollider.center = new Vector3(0,transform.localScale.x/2.0f,0);
+			//make collider larger IF not in green
+			if (!inGreen){
+				golfBallCollider.radius = transform.localScale.x;
+				golfBallCollider.center = new Vector3(0,transform.localScale.x/2.0f,0);
+			}
 
 			//make shadow quality back to 400
 			QualitySettings.shadowDistance = 400f;

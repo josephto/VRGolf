@@ -9,6 +9,7 @@ public class GolfClub : MonoBehaviour {
 	public AudioClip golfSwingSound;
 	public AudioClip golfHitSound;
 	public Transform flagPos;
+	public bool putter;
 
 	private float nextSoundTime = 0f;
 
@@ -40,12 +41,16 @@ public class GolfClub : MonoBehaviour {
 //					}
 //				}
 
-				if  (velocity.magnitude > 5000f){
-					velocity = velocity * (5000f/velocity.magnitude);
-				}
+//				if  (velocity.magnitude > 5000f){
+//					velocity = velocity * (5000f/velocity.magnitude);
+//				}
 				if (hit.collider.name == "GolfBall"){
 					Debug.LogError ("velocity in FixedUpdate: "+velocity/15f);
-					hit.collider.gameObject.rigidbody.velocity = velocity/15f;
+					if (putter){
+						hit.collider.gameObject.rigidbody.velocity = new Vector3(velocity.x/15f,velocity.y/30f, velocity.z/15f);
+					}else{
+						hit.collider.gameObject.rigidbody.velocity = velocity/15f;
+					}
 					contact = true;
 					GolfBall golfBall = hit.collider.gameObject.GetComponent<GolfBall>();
 					if (golfBall != null){
