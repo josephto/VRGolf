@@ -9,11 +9,13 @@ public class GolfBall : MonoBehaviour {
 	private Camera mainCamera;
 	private SphereCollider golfBallCollider;
 	public GameObject golfer; 
+	public bool inGreen;
 
 	// Use this for initialization
 	void Start () {
 		mainCamera = Camera.main; 
 		golfBallCollider = this.gameObject.GetComponent<SphereCollider>();
+		inGreen = false;
 	}
 
 	void LateUpdate(){
@@ -29,7 +31,12 @@ public class GolfBall : MonoBehaviour {
 			Vector3 ballToFlag = (flagPos.position - transform.position).normalized;
 			Vector3 upVector = new Vector3(0,1,0);
 			Vector3 crossProd = Vector3.Cross(ballToFlag, upVector).normalized;
-			golfer.transform.position = transform.position + crossProd*8.7f - ballToFlag*2.4f;
+			if (inGreen){
+				golfer.transform.position = transform.position + crossProd*6.7f - ballToFlag*2.4f;
+			}else{
+				golfer.transform.position = transform.position + crossProd*8.7f - ballToFlag*2.4f;
+			}
+			//golfer.transform.position = transform.position + crossProd*8.7f - ballToFlag*2.4f;
 			golfer.transform.LookAt(this.gameObject.transform);
 			GolfClub golfClub = golfer.GetComponentInChildren<GolfClub>();
 			golfClub.contact = false;
