@@ -4,10 +4,11 @@ using System.Collections;
 public class Hole : MonoBehaviour {
 
 	public float minMagnitude;
+	private GolfManager golfManager;
 
 	// Use this for initialization
 	void Start () {
-	
+		golfManager = GameObject.Find ("GolfManager").GetComponent<GolfManager>();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +22,7 @@ public class Hole : MonoBehaviour {
 			Debug.LogError (collided.rigidbody.velocity.magnitude);
 			if (collided.rigidbody.velocity.magnitude < minMagnitude){
 				Debug.LogError ("You've won!");
+				Debug.LogError ("It took you "+golfManager.getNumStrokes());
 				collided.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			}
 		}

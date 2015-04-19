@@ -10,12 +10,14 @@ public class GolfClub : MonoBehaviour {
 	public AudioClip golfHitSound;
 	public Transform flagPos;
 	public bool putter;
+	private GolfManager golfManager;
 
 	private float nextSoundTime = 0f;
 
 	// Use this for initialization
 	void Start () {
 		oldPosition = transform.position;
+		golfManager = GameObject.Find ("GolfManager").GetComponent<GolfManager>();
 	}
 
 	// Update is called once per frame
@@ -56,6 +58,7 @@ public class GolfClub : MonoBehaviour {
 					if (golfBall != null){
 						golfBall.cameraFollow = true;
 					}
+					golfManager.IncrementStrokes();
 					audio.PlayOneShot (golfHitSound);
 				}
 			}
