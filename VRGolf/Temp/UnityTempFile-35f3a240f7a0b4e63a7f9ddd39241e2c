@@ -51,6 +51,7 @@
 'Assets/GolfClub.cs'
 'Assets/GolfManager.cs'
 'Assets/GolfPutter.cs'
+'Assets/Hole.cs'
 'Assets/OVR/Scripts/OVRCameraRig.cs'
 'Assets/OVR/Scripts/OVRCommon.cs'
 'Assets/OVR/Scripts/OVRDisplay.cs'

@@ -50,6 +50,7 @@
      <Compile Include="Assets\GolfClub.cs" />
      <Compile Include="Assets\GolfManager.cs" />
      <Compile Include="Assets\GolfPutter.cs" />
+     <Compile Include="Assets\Hole.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRDisplay.cs" />

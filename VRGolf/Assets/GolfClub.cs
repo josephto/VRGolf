@@ -45,7 +45,7 @@ public class GolfClub : MonoBehaviour {
 //					velocity = velocity * (5000f/velocity.magnitude);
 //				}
 				if (hit.collider.name == "GolfBall"){
-					Debug.LogError ("velocity in FixedUpdate: "+velocity/15f);
+//					Debug.LogError ("velocity in FixedUpdate: "+velocity/15f);
 					if (putter){
 						hit.collider.gameObject.rigidbody.velocity = new Vector3(velocity.x/15f,velocity.y/30f, velocity.z/15f);
 					}else{
