@@ -28,35 +28,28 @@ public class GolfClub : MonoBehaviour {
 		Vector3 newPosition = transform.position;
 		velocity = (newPosition - oldPosition) / Time.deltaTime;
 		if (!contact){
-			Vector3 origin = newPosition;
-			Vector3 direction = (oldPosition-origin).normalized;
+			Vector3 origin = oldPosition;
+			Vector3 direction = (newPosition-origin).normalized;
 			RaycastHit hit = new RaycastHit();
 
 			//sttill need to fix back swing
 
 			if(Physics.Raycast(origin, direction, out hit) && 
-			   velocity.magnitude > (flagPos.position - transform.position).magnitude /4f ){ //threshold for swing arbitrary
-//				if  (velocity.magnitude > 3000f){
-//					if(Time.time >= nextSoundTime){
-//						audio.PlayOneShot (golfSwingSound);
-//						nextSoundTime = Time.time + golfSwingSound.length;
-//					}
-//				}
+			   velocity.magnitude > (flagPos.position - transform.position).magnitude /4f && //minimum velocity
+			   velocity.magnitude < 10000 && //max velocity
+			   Vector3.Dot (velocity.normalized, (flagPos.position - newPosition).normalized) > 0){ //fix back swing
 
-//				if  (velocity.magnitude > 5000f){
-//					velocity = velocity * (5000f/velocity.magnitude);
-//				}
 				if (hit.collider.name == "GolfBall"){
-//					Debug.LogError ("velocity in FixedUpdate: "+velocity/15f);
 					if (putter){
 						hit.collider.gameObject.rigidbody.velocity = new Vector3(velocity.x/15f,velocity.y/30f, velocity.z/15f);
 					}else{
-						hit.collider.gameObject.rigidbody.velocity = velocity/15f;
+						hit.collider.gameObject.rigidbody.velocity = velocity/13f;
 					}
 					contact = true;
 					GolfBall golfBall = hit.collider.gameObject.GetComponent<GolfBall>();
 					if (golfBall != null){
 						golfBall.cameraFollow = true;
+						golfBall.gameObject.rigidbody.constraints = RigidbodyConstraints.None;
 					}
 					golfManager.IncrementStrokes();
 					audio.PlayOneShot (golfHitSound);

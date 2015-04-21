@@ -24,6 +24,7 @@ public class GolfBall : MonoBehaviour {
 
 			//set ball
 			gameObject.rigidbody.useGravity = false;
+			gameObject.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			transform.rotation = Quaternion.identity;
 
 
@@ -67,8 +68,6 @@ public class GolfBall : MonoBehaviour {
 			//make collider size of ball
 			golfBallCollider.radius = transform.localScale.x/2.0f;
 			golfBallCollider.center = new Vector3(0,0,0);
-
-			gameObject.rigidbody.constraints = RigidbodyConstraints.None;
 
 			//set shadow quality to 1000
 			QualitySettings.shadowDistance = 1000f;

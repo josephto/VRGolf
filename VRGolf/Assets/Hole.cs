@@ -23,6 +23,7 @@ public class Hole : MonoBehaviour {
 			if (collided.rigidbody.velocity.magnitude < minMagnitude){
 				Debug.LogError ("You've won!");
 				Debug.LogError ("It took you "+golfManager.getNumStrokes());
+				collided.transform.position = this.gameObject.transform.position;
 				collided.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			}
 		}
