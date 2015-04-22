@@ -51,7 +51,7 @@ public class GolfBall : MonoBehaviour {
 			golfClub.contact = false;
 
 			//set up camera
-			mainCamera.transform.position = mainCamera.transform.position + new Vector3(0,15,0);
+			mainCamera.transform.position = mainCamera.transform.position + new Vector3(0,10,0);
 		}
 
 	}
@@ -66,7 +66,7 @@ public class GolfBall : MonoBehaviour {
 		}
 
 		//update distance
-		golfManager.setDistance((int)(flagPos.position - transform.position).magnitude);
+		golfManager.setDistance((int)((flagPos.position - transform.position).magnitude/4f));
 
 	}
 
@@ -86,7 +86,7 @@ public class GolfBall : MonoBehaviour {
 
 
 			Vector3 dir = (this.gameObject.transform.position+new Vector3(0,2,0) - flagPos.position).normalized;
-			mainCamera.transform.position = this.gameObject.transform.position +new Vector3(0,2,0) + dir*distanceFromBall;
+			mainCamera.transform.position = this.gameObject.transform.position +new Vector3(0,8,0) + dir*distanceFromBall;
 
 			//toa
 			float angle = Mathf.Atan(2/(this.gameObject.transform.position - flagPos.position).magnitude);

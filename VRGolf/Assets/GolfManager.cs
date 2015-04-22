@@ -11,12 +11,14 @@ public class GolfManager : MonoBehaviour {
 	public Font f;
 	public Font m;
 	public bool intro;
-	public bool victory;
+	private bool victory;
+	private GameObject carl;
 
 	// Use this for initialization
 	void Start() {
 		intro = true;
 		victory = false;
+		carl = GameObject.Find ("Carl");
 	}
 
 	void Awake() {
@@ -25,7 +27,19 @@ public class GolfManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+		if (victory){
+			Camera.main.transform.LookAt(carl.transform);
+			Camera.main.transform.RotateAround(carl.transform.position, Vector3.up, 10f * Time.deltaTime);
+			//Debug.LogError ("WHATT");
+		}
+	}
+
+	public void setVictory(bool v){
+		victory = v;
+		if (victory){
+			carl.transform.position = new Vector3(carl.transform.position.x, 12f, carl.transform.position.z);
+			Camera.main.transform.position = carl.transform.position + carl.transform.forward.normalized*70f + new Vector3(0f,15f,0f);
+		}
 	}
 
 	public void IncrementStrokes(){
@@ -58,7 +72,7 @@ public class GolfManager : MonoBehaviour {
 			GUI.DrawTexture(new Rect(5, 85, 60, 60), flag, ScaleMode.ScaleToFit, true, 0.0F);
 			GUI.skin.font = m;
 			GUI.skin.label.fontSize = 30;
-			GUI.TextArea(new Rect(90,95,160,80), distance.ToString()+" ft", "Label");
+			GUI.TextArea(new Rect(90,95,160,80), (distance).ToString()+" ft", "Label");
 		}
 
 		if(victory){

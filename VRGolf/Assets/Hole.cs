@@ -19,14 +19,13 @@ public class Hole : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		GameObject collided = other.gameObject;
 		if (collided.name == "GolfBall") {
-			Debug.LogError (collided.rigidbody.velocity.magnitude);
 			if (collided.rigidbody.velocity.magnitude < minMagnitude){
-				Debug.LogError ("You've won!");
-				Debug.LogError ("It took you "+golfManager.getNumStrokes());
 				collided.transform.position = this.gameObject.transform.position;
 				collided.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 				golfManager.setDistance(0);
-				golfManager.victory = true;
+				golfManager.setVictory(true);
+				collided.GetComponent<GolfBall>().cameraFollow = false;
+				collided.GetComponent<SphereCollider>().enabled = false;
 			}
 		}
 	}
