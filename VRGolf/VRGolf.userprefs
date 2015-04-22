@@ -1,41 +1,26 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Hole.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/IntroGolfBall.cs">
     <Files>
-      <File FileName="Assets/Hole.cs" Line="25" Column="65" />
-      <File FileName="Assets/GolfManager.cs" Line="22" Column="21" />
-      <File FileName="Assets/PuttingGreen.cs" Line="17" Column="45" />
-      <File FileName="Assets/GolfClub.cs" Line="20" Column="3" />
-      <File FileName="Assets/ZigFu/Scripts/UserControls/ZigSkeleton.cs" Line="23" Column="35" />
-      <File FileName="Assets/ZigFu/Scripts/_Internal/kinectSpecific.cs" Line="1" Column="1" />
+      <File FileName="Assets/ZigFu/Scripts/UserControls/ZigSkeleton.cs" Line="106" Column="43" />
+      <File FileName="Assets/Hole.cs" Line="1" Column="1" />
+      <File FileName="Assets/GolfManager.cs" Line="41" Column="15" />
+      <File FileName="Assets/PuttingGreen.cs" Line="1" Column="1" />
+      <File FileName="Assets/GolfClub.cs" Line="20" Column="77" />
       <File FileName="Assets/ZigFu/Scripts/Viewers/ZigUsersRadar.cs" Line="1" Column="1" />
       <File FileName="Assets/GolfBall.cs" Line="1" Column="1" />
-      <File FileName="Assets/ZigFu/Scripts/Zig.cs" Line="1" Column="1" />
+      <File FileName="Assets/ZigFu/Scripts/Zig.cs" Line="39" Column="22" />
       <File FileName="Assets/ZigFu/SampleScenes/_Data/Scripts/MenuController.cs" Line="1" Column="1" />
       <File FileName="Assets/GolfPutter.cs" Line="1" Column="1" />
+      <File FileName="Assets/ZigFu/Scripts/UserEngagers/ZigEngageSingleUser.cs" Line="1" Column="1" />
+      <File FileName="Assets/GolfCourse.cs" Line="13" Column="3" />
+      <File FileName="Assets/IntroGolfBall.cs" Line="22" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="ZigFu" expanded="True">
-              <Node name="SampleScenes" expanded="True">
-                <Node name="_Data" expanded="True">
-                  <Node name="Scripts" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="UserControls" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Hole.cs" selected="True" />
-          </Node>
-          <Node name="Assembly-CSharp-firstpass" expanded="True">
-            <Node name="Standard Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="General Scripts" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="IntroGolfBall.cs" selected="True" />
           </Node>
         </State>
       </Pad>

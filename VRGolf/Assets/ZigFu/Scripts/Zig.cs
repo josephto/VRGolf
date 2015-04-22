@@ -28,6 +28,7 @@ public class Zig : MonoBehaviour {
         //ZigInput.UpdateLabelMap = UpdateLabelmap;
         //ZigInput.AlignDepthToRGB = AlignDepthToRGB;
         ZigInput.Instance.AddListener(gameObject);
+		DontDestroyOnLoad(transform.gameObject);
 	}
 
     void notifyListeners(string msgname, object arg) {

@@ -103,6 +103,8 @@ public class ZigSkeleton : MonoBehaviour
 
     public void Awake()
     {
+		DontDestroyOnLoad(transform.gameObject);
+
         int jointCount = Enum.GetNames(typeof(ZigJointId)).Length;
 
         transforms = new Transform[jointCount];

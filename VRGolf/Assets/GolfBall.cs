@@ -10,11 +10,14 @@ public class GolfBall : MonoBehaviour {
 	private SphereCollider golfBallCollider;
 	public GameObject golfer; 
 	public bool inGreen;
+	private GolfManager golfManager;
 
 	// Use this for initialization
 	void Start () {
 		mainCamera = Camera.main; 
 		golfBallCollider = this.gameObject.GetComponent<SphereCollider>();
+		golfManager = GameObject.Find ("GolfManager").GetComponent<GolfManager>();
+		golfManager.setDistance((int)(flagPos.position - transform.position).magnitude);
 		inGreen = false;
 	}
 
@@ -26,7 +29,6 @@ public class GolfBall : MonoBehaviour {
 			gameObject.rigidbody.useGravity = false;
 			gameObject.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			transform.rotation = Quaternion.identity;
-
 
 			//set up golfer
 			Vector3 ballToFlag = (flagPos.position - transform.position).normalized;
@@ -56,6 +58,10 @@ public class GolfBall : MonoBehaviour {
 		if(gameObject.rigidbody.velocity.magnitude < 2f){
 			gameObject.rigidbody.angularVelocity = gameObject.rigidbody.angularVelocity*0.75f;
 		}
+
+		//update distance
+		golfManager.setDistance((int)(flagPos.position - transform.position).magnitude);
+
 	}
 
 	// Update is called once per frame
@@ -66,7 +72,7 @@ public class GolfBall : MonoBehaviour {
 			gameObject.rigidbody.useGravity = true; 
 
 			//make collider size of ball
-			golfBallCollider.radius = transform.localScale.x/2.0f;
+			golfBallCollider.radius = .5f;
 			golfBallCollider.center = new Vector3(0,0,0);
 
 			//set shadow quality to 1000
@@ -74,7 +80,7 @@ public class GolfBall : MonoBehaviour {
 
 
 			Vector3 dir = (this.gameObject.transform.position+new Vector3(0,2,0) - flagPos.position).normalized;
-			mainCamera.transform.position = this.gameObject.transform.position +new Vector3(0,02) + dir*distanceFromBall;
+			mainCamera.transform.position = this.gameObject.transform.position +new Vector3(0,2,0) + dir*distanceFromBall;
 
 			//toa
 			float angle = Mathf.Atan(2/(this.gameObject.transform.position - flagPos.position).magnitude);
@@ -82,10 +88,13 @@ public class GolfBall : MonoBehaviour {
 			mainCamera.transform.LookAt (flagPos);
 		}else{
 
-			//make collider larger IF not in green
-			if (!inGreen){
-				golfBallCollider.radius = transform.localScale.x;
-				golfBallCollider.center = new Vector3(0,transform.localScale.x/2.0f,0);
+
+			if (inGreen){
+				golfBallCollider.radius = 1f;
+				golfBallCollider.center = new Vector3(0,.5f,0);
+			}else{
+				golfBallCollider.radius = 2f;
+				golfBallCollider.center = new Vector3(0,1.5f,0);
 			}
 
 			//make shadow quality back to 400

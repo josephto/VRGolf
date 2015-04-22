@@ -25,6 +25,7 @@ public class Hole : MonoBehaviour {
 				Debug.LogError ("It took you "+golfManager.getNumStrokes());
 				collided.transform.position = this.gameObject.transform.position;
 				collided.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+				golfManager.setDistance(0);
 			}
 		}
 	}
