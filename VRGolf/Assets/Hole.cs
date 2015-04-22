@@ -26,6 +26,7 @@ public class Hole : MonoBehaviour {
 				collided.transform.position = this.gameObject.transform.position;
 				collided.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 				golfManager.setDistance(0);
+				golfManager.victory = true;
 			}
 		}
 	}

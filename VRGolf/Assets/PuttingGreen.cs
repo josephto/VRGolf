@@ -13,6 +13,10 @@ public class PuttingGreen : MonoBehaviour {
 	
 	}
 
+	void Awake(){
+		DontDestroyOnLoad (this.transform.gameObject);
+	}
+
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.name == "GolfBall") {
 			originalDrag = other.gameObject.rigidbody.angularDrag;

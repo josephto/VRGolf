@@ -39,7 +39,13 @@ public class GolfClub : MonoBehaviour {
 			   velocity.magnitude < 10000 && //max velocity
 			   Vector3.Dot (velocity.normalized, (flagPos.position - newPosition).normalized) > 0){ //fix back swing
 
-				if (hit.collider.name == "GolfBall"){
+				if (hit.collider.name == "GolfBallFake"){
+					hit.collider.gameObject.rigidbody.velocity = velocity/13f;
+					audio.PlayOneShot (golfHitSound);
+				}
+
+				else if (hit.collider.name == "GolfBall"){
+
 					if (putter){
 						hit.collider.gameObject.rigidbody.velocity = new Vector3(velocity.x/15f,velocity.y/30f, velocity.z/15f);
 					}else{

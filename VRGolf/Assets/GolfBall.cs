@@ -5,10 +5,10 @@ public class GolfBall : MonoBehaviour {
 
 	public bool cameraFollow = false;
 	private float distanceFromBall = 50f;
-	public Transform flagPos;
+	private Transform flagPos;
 	private Camera mainCamera;
 	private SphereCollider golfBallCollider;
-	public GameObject golfer; 
+	private GameObject golfer; 
 	public bool inGreen;
 	private GolfManager golfManager;
 
@@ -17,8 +17,14 @@ public class GolfBall : MonoBehaviour {
 		mainCamera = Camera.main; 
 		golfBallCollider = this.gameObject.GetComponent<SphereCollider>();
 		golfManager = GameObject.Find ("GolfManager").GetComponent<GolfManager>();
+		flagPos = GameObject.Find ("FlagPos").transform;
+		golfer = GameObject.Find ("Carl");
 		golfManager.setDistance((int)(flagPos.position - transform.position).magnitude);
 		inGreen = false;
+	}
+
+	void Awake(){
+		DontDestroyOnLoad(transform.gameObject);
 	}
 
 	void LateUpdate(){

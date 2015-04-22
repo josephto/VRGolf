@@ -35,7 +35,7 @@ public class IntroUI : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider c){
-		if (c.gameObject.name == "GolfBall"){
+		if (c.gameObject.name == "GolfBallFake"){
 			golfManager.intro = false;
 			Application.LoadLevel("VRGolf");
 		}
