@@ -1,25 +1,25 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GolfManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GolfBall.cs">
     <Files>
       <File FileName="Assets/ZigFu/Scripts/UserControls/ZigSkeleton.cs" Line="106" Column="43" />
-      <File FileName="Assets/Hole.cs" Line="29" Column="32" />
-      <File FileName="Assets/GolfManager.cs" Line="19" Column="18" />
-      <File FileName="Assets/PuttingGreen.cs" Line="1" Column="1" />
-      <File FileName="Assets/GolfClub.cs" Line="1" Column="1" />
+      <File FileName="Assets/Hole.cs" Line="28" Column="61" />
+      <File FileName="Assets/GolfManager.cs" Line="53" Column="19" />
+      <File FileName="Assets/PuttingGreen.cs" Line="28" Column="32" />
+      <File FileName="Assets/GolfClub.cs" Line="44" Column="39" />
       <File FileName="Assets/ZigFu/Scripts/Viewers/ZigUsersRadar.cs" Line="1" Column="1" />
-      <File FileName="Assets/GolfBall.cs" Line="1" Column="1" />
+      <File FileName="Assets/GolfBall.cs" Line="69" Column="88" />
       <File FileName="Assets/ZigFu/Scripts/Zig.cs" Line="1" Column="1" />
       <File FileName="Assets/ZigFu/SampleScenes/_Data/Scripts/MenuController.cs" Line="1" Column="1" />
       <File FileName="Assets/GolfPutter.cs" Line="1" Column="1" />
       <File FileName="Assets/ZigFu/Scripts/UserEngagers/ZigEngageSingleUser.cs" Line="1" Column="1" />
-      <File FileName="Assets/IntroUI.cs" Line="32" Column="3" />
+      <File FileName="Assets/IntroUI.cs" Line="38" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="GolfManager.cs" selected="True" />
+            <Node name="GolfBall.cs" selected="True" />
           </Node>
         </State>
       </Pad>
